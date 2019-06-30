@@ -34,6 +34,7 @@ STATICFILES_FINDERS = [
 ]
 MEDIA_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
+AWS_S3_REGION_NAME = 'ap-northeast-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # auth
