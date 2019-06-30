@@ -34,6 +34,7 @@ STATICFILES_FINDERS = [
 ]
 MEDIA_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # auth
 AUTH_USER_MODEL = 'member.MyUser'
