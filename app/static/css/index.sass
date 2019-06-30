@@ -1,0 +1,33 @@
+@import var
+
+#index
+  font-size: 0
+  @media screen and (max-width: $width-mobile)
+    text-align: center
+
+  #img-index-left
+    width: 576px
+
+  #index-right
+    width: 386px
+    display: inline-block
+    vertical-align: top
+    @media screen and (max-width: $width-mobile)
+      width: 100%
+
+    #img-index-open
+      margin-bottom: 20px
+      @media screen and (max-width: $width-mobile)
+        display: none
+
+    #notice-list
+      width: 386px
+      font-size: $common-font-size
+      line-height: 1.7
+      
+      @media screen and (max-width: $width-mobile)
+        width: 100%
+        font-size: 10px
+
+      .notice-date
+        font-weight: bold

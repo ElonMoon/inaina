@@ -1,0 +1,20 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div id="index">
+	<img src="{% static 'images/inainamain.gif' %}" alt="" id="img-index-left">
+	<div id="index-right">
+		<img src="{% static 'images/open.jpeg' %}" alt="" id="img-index-open">
+
+		<table id="notice-list">
+			{% for notice in notice_list %}
+			<tr>
+				<td class="notice-date">▶ {{ notice.created_date|date:"Y년 m월 d일" }}</td>
+				<td class="notice-title">{{ notice.title }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

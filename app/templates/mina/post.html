@@ -1,0 +1,122 @@
+{% extends 'common/base.html' %}
+
+{% block meta_title %}{{ posts.0.title }}{% endblock %}
+{% block meta_desc %}{{ posts.0.content }}{% endblock %}
+{% block meta_image %}{{ base_url }}{{ posts.0.url_image }}{% endblock %}
+
+{% block content %}
+<div class="post mina-post">
+	<div id="calendar-container">
+		<div id="calendar-top">
+			<form action="{{ request.path }}" method="POST" class="arrow">{% csrf_token %}
+				<input type="hidden" name="year" value="{{ cal_prev_date.year }}"/>
+				<input type="hidden" name="month" value="{{ cal_prev_date.month }}"/>
+				<input class="link-button" type="submit" value="&nbsp;&nbsp;<&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
+			</form>
+			{{ year }}년 {{ month }}월
+			<form action="{{ request.path }}" method="POST" class="arrow">{% csrf_token %}
+				<input type="hidden" name="year" value="{{ cal_next_date.year }}"/>
+				<input type="hidden" name="month" value="{{ cal_next_date.month }}"/>
+				<input class="link-button" type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;"/>
+			</form>
+		</div>
+		<table id="calendar-table">
+			<tr>
+				<th>Mon</th>
+				<th>Tue</th>
+				<th>Wed</th>
+				<th>Thu</th>
+				<th>Fri</th>
+				<th>Sat</th>
+				<th>Sun</th>
+			</tr>
+			{% for week in week_list %}
+			<tr>
+				{% for day_info in week %}
+				<td class="
+					{% if day_info.today %}today {% endif %}
+					{% if day_info.posts %}exist {% endif %}
+					{% if day_info.current %}current {% endif %}
+				">
+					{% if day_info.day and day_info.posts and day_info.today %}
+						<a href="{% url 'mina:post' pk=day_info.posts.0.pk %}">{{ day_info.day }}</a>
+					{% elif day_info.day and day_info.posts %}
+						<a href="{% url 'mina:post' pk=day_info.posts.0.pk %}">{{ day_info.day }}</a>
+					{% elif day_info.day %}
+						<a>{{ day_info.day }}</a>
+					{% endif %}
+				</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<div class="frame mina-framme">
+		<div class="content-container">
+			{% for post in posts %}
+			<div class="content-post">
+				<div class="post-title">{{ post.title }}</div>
+				<div class="fb-like"
+				     data-href="{{ path_url }}"
+				     data-layout="button_count"
+				     data-show-faces="false"
+				     data-share="true">
+				</div>
+				<div class="post-created">{{ post.created_date|date:"Y년 m월 d일 a h:m" }}</div>
+				<hr class="post-line">
+				<img src="{{ post.url_image }}" alt="" class="post-image">
+				<p class="post-content">{{ post.content|linebreaksbr }}</p>
+				<div class="post-description">{{ post.description }}</div>
+			</div>
+			{% endfor %}
+
+			<div class="content-paginator">
+				{% if posts.has_previous %}
+					<a href="{% url 'mina:post_page_number' posts.previous_page_number %}">Prev</a>&nbsp;&lt;&lt;&nbsp;&nbsp;&nbsp;
+				{% endif %}
+
+				{% if posts.page_range_data.show_first %}
+					<span class="paginator-first paginator-btn">
+						<a href="{% url 'mina:post_page_number' 1 %}">
+							<span class="paginator-hidden">&nbsp;1&nbsp;</span>
+							<span class="paginator-first">Read first post</span>
+						</a>
+						<span class="ellipsis paginator-hidden">...</span>
+					</span>
+				{% else %}
+					<span class="paginator-btn paginator-first gray">First post</span>
+				{% endif %}
+
+				{% for i in posts.page_range_data.page_range %}
+					{% ifequal i posts.number %}
+						<b><font color="#666">&nbsp;&nbsp;{{ i }}&nbsp;&nbsp;</font></b>
+					{% else %}
+					<span class="paginator-hidden">
+						<a href="{% url 'mina:post_page_number' i %}">&nbsp;{{ i }}&nbsp;</a>
+					</span>
+					{% endifequal %}
+				{% endfor %}
+
+				{% if posts.page_range_data.show_last %}
+					<span class="paginator-last paginator-btn">
+						<span class="ellipsis paginator-hidden">...</span>
+						<a href="{% url 'mina:post_page_number' posts.paginator.num_pages %}">
+							<span class="paginator-hidden">{{ posts.paginator.num_pages }}</span>
+							<span class="paginator-last">Read last post</span>
+						</a>
+					</span>
+				{% else %}
+					<span class="paginator-btn paginator-last gray">Last post</span>
+				{% endif %}
+
+				{% if posts.has_next %}
+					&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;<a href="{% url 'mina:post_page_number' posts.next_page_number %}">Next</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

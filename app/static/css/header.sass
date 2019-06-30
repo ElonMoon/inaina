@@ -1,0 +1,29 @@
+@import var
+
+header
+  font-size: 0
+  border: 1px solid black
+  box-sizing: border-box
+  
+  #header-title
+    @media screen and (max-width: $width-mobile)
+      img
+        width: 100%
+
+  #header-menu
+    a.menu-item
+      @media screen and (max-width: $width-mobile)
+        width: calc(100% / 3)
+        
+        &.menu-hidden
+          display: none
+          
+        img
+          width: calc(100% / 3)
+          
+footer
+  padding-top: 60px
+  padding-bottom: 30px
+  text-align: center
+  @media screen and (max-width: $width-mobile)
+    padding-top: 20px

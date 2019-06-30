@@ -1,0 +1,153 @@
+@import var
+
+.post
+  font-size: 0
+
+  #calendar-container
+    @media screen and (max-width: $width-mobile)
+      display: none
+    width: 310px
+    display: inline-block
+    vertical-align: top
+
+    #calendar-top
+      font-size: 13px
+      font-weight: bold
+      text-align: center
+      margin-bottom: 15px
+
+      form.arrow
+        display: inline-block
+
+        input.link-button
+          font-size: 14px
+          background: none
+          border: none
+          text-decoration: none
+          cursor: pointer
+          font-weight: bolder
+
+    #calendar-table
+      width: 210px
+      margin: 0 auto
+
+      tr
+        font-size: 13px
+        text-align: center
+
+        th, td
+          width: 30px
+          border-radius: 3px
+
+          &.exist
+            a
+              color: $color-link
+              font-weight: bold
+
+          &.today
+            background-color: #444
+            color: white
+            a
+              color: $color-link
+
+          &.current
+            a
+              color: red
+
+          a
+            text-decoration: none
+            display: inline-block
+            width: 100%
+            height: 100%
+            padding-top: 5px
+            padding-bottom: 5px
+
+  .frame
+    width: 652px
+    display: inline-block
+    vertical-align: top
+    font-size: $common-font-size
+    @media screen and (max-width: $width-mobile)
+      width: 100%
+
+    .content-container
+      width: 500px
+      margin: 0 auto
+      @media screen and (max-width: $width-mobile)
+        width: 100%
+
+      .content-post
+        border: 5px solid #ddd
+        padding: 10px
+
+        .post-title
+          color: black
+          font-size: 14px
+          margin-bottom: 4px
+
+        .fb-like
+          float: right
+          margin-top: -6px
+
+        .post-created
+          font-size: 12px
+
+        hr.post-line
+          border-style: dotted
+          color: #aaa
+
+        img.post-image
+          width: 100%
+          -webkit-box-sizing: border-box
+          -moz-box-sizing: border-box
+          box-sizing: border-box
+          border: 1px solid #eee
+          padding: 3px
+
+        .post-content
+          font-size: 13px
+          line-height: 20px
+
+        .post-description
+          padding: 5px
+          background-color: #ddd
+          font-size: 11px
+          -webkit-border-radius: 2px
+          -moz-border-radius: 2px
+          border-radius: 2px
+
+      .content-paginator
+        position: relative
+        padding-top: 30px
+        text-align: center
+        font-size: 12px
+        .gray
+          color: #ccc
+        @media screen and (max-width: $width-mobile)
+          height: 80px
+          font-size: 16px
+          .paginator-hidden
+            display: none
+          .paginator-btn
+            display: block
+            width: 50%
+            height: 30px
+            line-height: 30px
+            text-align: center
+            position: absolute
+            border-top: 1px solid #ccc
+            border-bottom: 1px solid #ccc
+            box-sizing: border-box
+            
+          .paginator-first
+            bottom: 0
+            left: 0
+          .paginator-last
+            bottom: 0
+            right: 0
+          a
+            padding: 5% 5%
+
+        a
+          color: #333
+          text-decoration: none

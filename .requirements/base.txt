@@ -1,0 +1,10 @@
+# Django
+django
+django-extensions
+django-json-secrets
+django-storages
+
+# Python
+boto3
+pillow
+psycopg2-binary

@@ -1,0 +1,29 @@
+#index {
+  font-size: 0; }
+  @media screen and (max-width: 1000px) {
+    #index {
+      text-align: center; } }
+  #index #img-index-left {
+    width: 576px; }
+  #index #index-right {
+    width: 386px;
+    display: inline-block;
+    vertical-align: top; }
+    @media screen and (max-width: 1000px) {
+      #index #index-right {
+        width: 100%; } }
+    #index #index-right #img-index-open {
+      margin-bottom: 20px; }
+      @media screen and (max-width: 1000px) {
+        #index #index-right #img-index-open {
+          display: none; } }
+    #index #index-right #notice-list {
+      width: 386px;
+      font-size: 13px;
+      line-height: 1.7; }
+      @media screen and (max-width: 1000px) {
+        #index #index-right #notice-list {
+          width: 100%;
+          font-size: 10px; } }
+      #index #index-right #notice-list .notice-date {
+        font-weight: bold; }
