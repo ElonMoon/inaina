@@ -40,6 +40,8 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 # auth
 AUTH_USER_MODEL = 'member.MyUser'
 
+SITE_ID = 1
+
 # Application definition
 INSTALLED_APPS = [
     'mina',
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'django_extensions',
 ]

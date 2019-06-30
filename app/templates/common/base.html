@@ -1,61 +1,61 @@
 {% load staticfiles %}
-<!doctype html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>inaina.net :: 이나이나넷</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>inaina.net :: 이나이나넷</title>
 
-	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-	<link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
-	<link type="text/css" rel="stylesheet" href="{% static 'css/header.css' %}">
-	<link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
-	<link type="text/css" rel="stylesheet" href="{% static 'css/post.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/post.css' %}">
 
-	<meta property="og:url"           content="{% block meta_url %}{{ path_url }}{% endblock %}" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="{% block meta_title %}inaina{% endblock %}" />
-	<meta property="og:description"   content="{% block meta_desc %}inaina.net::이나이나넷{% endblock %}" />
-	<meta property="og:image"         content="{% block meta_image %}{{ base_url }}{% static 'images/inainamain.gif' %}{% endblock %}" />
-	<meta property="fb:app_id"        content="1234566413253183" />
-	{% block head %}
-	{% endblock %}
+    <meta property="og:url" content="{% block meta_url %}{{ path_url }}{% endblock %}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{% block meta_title %}inaina{% endblock %}"/>
+    <meta property="og:description" content="{% block meta_desc %}inaina.net::이나이나넷{% endblock %}"/>
+    <meta property="og:image" content="{% block meta_image %}{{ base_url }}{% static 'images/inainamain.gif' %}{% endblock %}"/>
+    <meta property="fb:app_id" content="1234566413253183"/>
+    {% block head %}
+    {% endblock %}
 </head>
 <body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=1234566413253183";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	<div id="wrap">
-		<header>
-			<div id="header-title">
-				<a href="{% url 'index' %}">
-					<img src="{% static 'images/inainanet_title.gif' %}" alt="" usemap="#title-map">
-				</a>
-			</div>
-			<div id="header-menu">
-				<a href="{% url 'about' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_01.gif' %}" alt=""></a>
-				<a href="{% url 'jina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_02.gif' %}" alt=""></a>
-				<a href="{% url 'mina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_03.gif' %}" alt=""></a>
-				<a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_04.gif' %}" alt=""></a>
-				<a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_05.gif' %}" alt=""></a>
-			</div>
-		</header>
-		<div id="content">
-			{% block content %}
-			{% endblock %}
-		</div>
-		<footer>
-			<div>Copyright 2012-2019 ⓒ inaina.net</div>
-		</footer>
-	</div>
-	{% block script %}
-	{% endblock %}
+    <div id="fb-root"></div>
+    <script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.3";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="wrap">
+        <header>
+            <div id="header-title">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/inainanet_title.gif' %}" alt="" usemap="#title-map"> </a>
+            </div>
+            <div id="header-menu">
+                <a href="{% url 'about' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_01.gif' %}" alt=""></a>
+                <a href="{% url 'jina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_02.gif' %}" alt=""></a>
+                <a href="{% url 'mina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_03.gif' %}" alt=""></a>
+                <a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_04.gif' %}" alt=""></a>
+                <a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_05.gif' %}" alt=""></a>
+            </div>
+        </header>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer>
+            <div>Copyright 2012-2019 ⓒ inaina.net</div>
+        </footer>
+    </div>
+    {% block script %}
+    {% endblock %}
 </body>
 </html>
