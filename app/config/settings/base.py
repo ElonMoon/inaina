@@ -10,21 +10,25 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 import os
-from djs import import_secrets
+from aws_secrets import SECRETS
 
+# Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
-import_secrets()
-
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
+# Config
+ALLOWED_HOSTS = []
+
+# Static
+STATIC_URL = '/static/'
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
+
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
@@ -34,10 +38,28 @@ STATICFILES_FINDERS = [
 ]
 MEDIA_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
-AWS_S3_REGION_NAME = 'ap-northeast-2'
-AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-# auth
+# django-aws-secrets-manager
+AWS_SECRETS_MANAGER_SECRETS_NAME = 'lhy'
+AWS_SECRETS_MANAGER_PROFILE = 'lhy-secrets-manager'
+AWS_SECRETS_MANAGER_SECRETS_SECTION = 'inaina:base'
+AWS_SECRETS_MANAGER_REGION_NAME = 'ap-northeast-2'
+
+# Secrets
+SECRET_KEY = SECRETS['SECRET_KEY']
+AWS_S3_ACCESS_KEY_ID = SECRETS['AWS_S3_ACCESS_KEY_ID']
+AWS_S3_SECRET_ACCESS_KEY = SECRETS['AWS_S3_SECRET_ACCESS_KEY']
+AWS_DEFAULT_ACL = SECRETS['AWS_DEFAULT_ACL']
+AWS_BUCKET_ACL = SECRETS['AWS_BUCKET_ACL']
+AWS_AUTO_CREATE_BUCKET = SECRETS['AWS_AUTO_CREATE_BUCKET']
+AWS_S3_FILE_OVERWRITE = SECRETS['AWS_S3_FILE_OVERWRITE']
+AWS_STORAGE_BUCKET_NAME = SECRETS['AWS_STORAGE_BUCKET_NAME']
+
+# AWS
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'ap-northeast-2'
+
+# Auth
 AUTH_USER_MODEL = 'member.MyUser'
 
 SITE_ID = 1
