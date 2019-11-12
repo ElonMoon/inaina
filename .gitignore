@@ -1,4 +1,6 @@
 # ignore directories
+*.ipynb
+.sql
 /.secrets
 /.static
 /.media

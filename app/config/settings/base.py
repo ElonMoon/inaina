@@ -15,7 +15,6 @@ from aws_secrets import SECRETS
 # Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
-SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Config
@@ -36,7 +35,6 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-MEDIA_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 
 # django-aws-secrets-manager
@@ -62,6 +60,14 @@ AWS_S3_REGION_NAME = 'ap-northeast-2'
 # Auth
 AUTH_USER_MODEL = 'member.MyUser'
 
+# django-dbbackup
+DBBACKUP_STORAGE = 'config.storages.DBStorage'
+DBBACKUP_STORAGE_OPTIONS = {
+    'access_key': SECRETS['AWS_S3_ACCESS_KEY_ID'],
+    'secret_key': SECRETS['AWS_S3_SECRET_ACCESS_KEY'],
+    'bucket_name': SECRETS['AWS_STORAGE_BUCKET_NAME'],
+}
+
 SITE_ID = 1
 
 # Application definition
@@ -80,6 +86,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    'dbbackup',
     'django_extensions',
 ]
 
