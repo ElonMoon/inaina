@@ -1,6 +1,6 @@
 from .base import *
 
-AWS_SECRETS_MANAGER_SECRETS_SECTION = 'inaina:local'
+AWS_SECRETS_MANAGER_SECRET_SECTION = 'inaina:local'
 DEBUG = True
 
 ALLOWED_HOSTS += SECRETS['ALLOWED_HOSTS']

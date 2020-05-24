@@ -3,7 +3,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 from .base import *
 
-AWS_SECRETS_MANAGER_SECRETS_SECTION = 'inaina:production'
+AWS_SECRETS_MANAGER_SECRET_SECTION = 'inaina:production'
 DEBUG = False
 
 ALLOWED_HOSTS += SECRETS['ALLOWED_HOSTS']
