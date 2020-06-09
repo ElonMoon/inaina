@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 import os
-from aws_secrets import SECRETS
 
 # Paths
+from django_secrets import SECRETS
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -38,9 +39,9 @@ STATICFILES_FINDERS = [
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 
 # django-aws-secrets-manager
-AWS_SECRETS_MANAGER_SECRETS_NAME = 'lhy'
+AWS_SECRETS_MANAGER_SECRET_NAME = 'lhy'
 AWS_SECRETS_MANAGER_PROFILE = 'lhy-secrets-manager'
-AWS_SECRETS_MANAGER_SECRETS_SECTION = 'inaina:base'
+AWS_SECRETS_MANAGER_SECRET_SECTION = 'inaina:base'
 AWS_SECRETS_MANAGER_REGION_NAME = 'ap-northeast-2'
 
 # Secrets
