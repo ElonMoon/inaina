@@ -48,8 +48,3 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
-
-    def url_field(self, fieldname):
-        field = getattr(self, fieldname)
-        if field and hasattr(field, 'url'):
-            return field.url

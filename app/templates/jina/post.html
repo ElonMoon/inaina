@@ -64,7 +64,7 @@
 				</div>
 				<div class="post-created">{{ post.created_date|date:"Y년 m월 d일 a h:m" }}</div>
 				<hr class="post-line">
-				<img src="{{ post.url_image }}" alt="" class="post-image">
+				<img src="{{ post.image.url }}" alt="" class="post-image">
 				<p class="post-content">{{ post.content|linebreaksbr }}</p>
 {#				<div class="post-description">{{ post.description }}</div>#}
 			</div>

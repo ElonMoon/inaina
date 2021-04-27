@@ -23,6 +23,3 @@ class MinaPost(BaseModel):
         verbose_name = '민아 포스트'
         verbose_name_plural = '%s 목록' % verbose_name
         ordering = ('-created_date',)
-
-    def url_image(self):
-        return self.url_field('image')

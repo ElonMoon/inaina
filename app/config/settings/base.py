@@ -28,6 +28,7 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
+DB_ROOT = os.path.join(ROOT_DIR, '.db')
 
 STATICFILES_DIRS = [
     STATIC_DIR,
@@ -36,7 +37,6 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 
 # django-aws-secrets-manager
 AWS_SECRETS_MANAGER_SECRET_NAME = 'lhy'
@@ -46,13 +46,10 @@ AWS_SECRETS_MANAGER_REGION_NAME = 'ap-northeast-2'
 
 # Secrets
 SECRET_KEY = SECRETS['SECRET_KEY']
-AWS_S3_ACCESS_KEY_ID = SECRETS['AWS_S3_ACCESS_KEY_ID']
-AWS_S3_SECRET_ACCESS_KEY = SECRETS['AWS_S3_SECRET_ACCESS_KEY']
-AWS_DEFAULT_ACL = SECRETS['AWS_DEFAULT_ACL']
+AWS_DEFAULT_ACL = 'public-read'
 AWS_BUCKET_ACL = SECRETS['AWS_BUCKET_ACL']
 AWS_AUTO_CREATE_BUCKET = SECRETS['AWS_AUTO_CREATE_BUCKET']
 AWS_S3_FILE_OVERWRITE = SECRETS['AWS_S3_FILE_OVERWRITE']
-AWS_STORAGE_BUCKET_NAME = SECRETS['AWS_STORAGE_BUCKET_NAME']
 
 # AWS
 AWS_S3_SIGNATURE_VERSION = 's3v4'
@@ -60,14 +57,6 @@ AWS_S3_REGION_NAME = 'ap-northeast-2'
 
 # Auth
 AUTH_USER_MODEL = 'member.MyUser'
-
-# django-dbbackup
-DBBACKUP_STORAGE = 'config.storages.DBStorage'
-DBBACKUP_STORAGE_OPTIONS = {
-    'access_key': SECRETS['AWS_S3_ACCESS_KEY_ID'],
-    'secret_key': SECRETS['AWS_S3_SECRET_ACCESS_KEY'],
-    'bucket_name': SECRETS['AWS_STORAGE_BUCKET_NAME'],
-}
 
 SITE_ID = 1
 

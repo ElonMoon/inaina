@@ -22,6 +22,3 @@ class JinaPost(BaseModel):
 
     def __str__(self):
         return self.title
-
-    def url_image(self):
-        return self.url_field('image')

@@ -1,9 +1,26 @@
 from .base import *
 
-AWS_SECRETS_MANAGER_SECRET_SECTION = 'inaina:local'
 DEBUG = True
 
-ALLOWED_HOSTS += SECRETS['ALLOWED_HOSTS']
-DATABASES = SECRETS['DATABASES']
+# django-dbbackup
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {
+    'location': DB_ROOT,
+}
+
+ALLOWED_HOSTS += [
+    'localhost',
+    'inaina.localhost',
+]
+DATABASES = {
+    "default": {
+      "ENGINE": "django.db.backends.postgresql",
+      "NAME": "inaina",
+      "USER": "inaina",
+      "PASSWORD": "inaina",
+      "HOST": "localhost",
+      "PORT": 5432
+    }
+}
 
 WSGI_APPLICATION = 'config.wsgi.local.application'

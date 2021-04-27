@@ -22,7 +22,9 @@ def post(request, pk=None, page_number=None):
             post = MinaPost.objects.get(pk=pk)
     except MinaPost.DoesNotExist:
         post = post_list.last()
-        return redirect('mina:post', pk=post.pk)
+        if post:
+            return redirect('mina:post', pk=post.pk)
+        return render(request, 'mina/post.html')
 
     page_index = MinaPost.objects.get_index(post, compare_field='created_date',
                                             sort='ascending') + 1
