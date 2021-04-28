@@ -240,6 +240,17 @@ boto3 = "*"
 django = "*"
 
 [[package]]
+name = "django-sslserver"
+version = "0.22"
+description = "An SSL-enabled development server for Django"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Django = ">=1.8"
+
+[[package]]
 name = "django-storages"
 version = "1.11.1"
 description = "Support for many storage backends in Django"
@@ -917,7 +928,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "c828afdf5906451897e6d19eab3cafcd185d33c87ceb86b2492ffd8c79f7f855"
+content-hash = "29ad481905cbc4d0c2f52babcb7333a7e1ab323edf119ceec1baa88bd1c50982"
 
 [metadata.files]
 appdirs = [
@@ -1053,6 +1064,9 @@ django-extensions = [
 django-secrets-manager = [
     {file = "django-secrets-manager-0.1.13.tar.gz", hash = "sha256:46d6360b0ddf8f4c860b62b3cfe9c4ab342c115478a10af5577736f9abe6a8e5"},
     {file = "django_secrets_manager-0.1.13-py3-none-any.whl", hash = "sha256:b7d8e619703e95ce7110c7194c93973a0cc3d4b3895c78244f7007e653e169a8"},
+]
+django-sslserver = [
+    {file = "django_sslserver-0.22-py3-none-any.whl", hash = "sha256:c598a363d2ccdc2421c08ddb3d8b0973f80e8e47a3a5b74e4a2896f21c2947c5"},
 ]
 django-storages = [
     {file = "django-storages-1.11.1.tar.gz", hash = "sha256:c823dbf56c9e35b0999a13d7e05062b837bae36c518a40255d522fbe3750fbb4"},
