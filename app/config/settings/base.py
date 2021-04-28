@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "dbbackup",
     "django_extensions",
+    "sslserver",
 ]
 
 MIDDLEWARE = [
