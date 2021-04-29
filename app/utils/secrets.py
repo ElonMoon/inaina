@@ -20,7 +20,7 @@ class LazySecrets(LazyObject):
         except (FileNotFoundError, json.decoder.JSONDecodeError):
             access_key = os.environ["AWS_S3_ACCESS_KEY_ID"]
             secret_key = os.environ["AWS_S3_SECRET_ACCESS_KEY"]
-            s3 = boto3.client("s3", aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+            s3 = boto3.resource("s3", aws_access_key_id=access_key, aws_secret_access_key=secret_key)
             s3.Object("inaina", "secrets.json").download_file(SECRETS_PATH)
             secrets = json.load(open(SECRETS_PATH, "rt"))
         return secrets

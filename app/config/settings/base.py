@@ -19,6 +19,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
 # Config
+IS_DOCKER = bool(os.environ.get("DOCKER"))
 ALLOWED_HOSTS = []
 
 # Static

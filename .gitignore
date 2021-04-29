@@ -1,3 +1,4 @@
+/.deploy/certbot
 # ignore directories
 *.ipynb
 .sql

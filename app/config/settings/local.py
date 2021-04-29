@@ -18,7 +18,7 @@ DATABASES = {
       "NAME": "inaina",
       "USER": "inaina",
       "PASSWORD": "inaina",
-      "HOST": "localhost",
+      "HOST": "host.docker.internal" if IS_DOCKER else "localhost",
       "PORT": 5432
     }
 }
