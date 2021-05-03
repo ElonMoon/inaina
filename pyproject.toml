@@ -7,22 +7,19 @@ authors = ["이한영 <dev@lhy.kr>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 black = "stable"
-boto3 = "^1.10.14"
+boto3 = "<2"
 django = "<3"
 django-dbbackup = "<3.2"
-django-debug-toolbar = "^3.2.1"
-django-extensions = "^2.2.5"
-django-storages = "^1.7.2"
-django-sslserver = "^0.22"
-gunicorn = "^20.0.4"
-pillow = "^6.2.1"
-psycopg2-binary = "^2.8.4"
+django-extensions = "<3"
+django-storages = "<2"
+gunicorn = "<21"
+pillow = "<8"
+psycopg2-binary = "<3"
 sentry-sdk = "<2"
-Werkzeug = "^1.0.1"
-pyOpenSSL = "^20.0.1"
 
 [tool.poetry.dev-dependencies]
-notebook = "^6.0.2"
+django-debug-toolbar = "<4"
+notebook = "<7"
 
 [tool.black]
 line-length = 130
