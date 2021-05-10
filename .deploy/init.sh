@@ -76,5 +76,7 @@ docker-compose run --rm --entrypoint "\
     --force-renewal" certbot
 echo
 
+sudo chmod 777 -R $data_path/conf
+
 echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload
