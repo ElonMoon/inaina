@@ -2,7 +2,6 @@ from .production import *
 
 DEBUG = True
 
-AWS_SECRETS_MANAGER_SECRET_SECTION = "inaina:develop"
 AWS_STORAGE_BUCKET_NAME = SECRETS["AWS_STORAGE_BUCKET_NAME"]
 
 # django-dbbackup
