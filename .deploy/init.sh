@@ -77,6 +77,7 @@ docker-compose run --rm --entrypoint "\
 echo
 
 sudo chmod 777 -R $data_path/conf
+sudo chown -R $USER:$USER $data_path
 
 echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload
