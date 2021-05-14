@@ -1,10 +1,9 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.models import AbstractUser, UserManager as BaseUserManager
 
 
-class MyUserManager(UserManager):
+class UserManager(BaseUserManager):
     pass
 
 
-class MyUser(AbstractUser):
-    objects = MyUserManager()
+class User(AbstractUser):
+    objects = UserManager()

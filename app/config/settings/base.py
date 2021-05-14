@@ -51,7 +51,7 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_REGION_NAME = "ap-northeast-2"
 
 # Auth
-AUTH_USER_MODEL = "member.MyUser"
+AUTH_USER_MODEL = "member.User"
 
 SITE_ID = 1
 
@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "dbbackup",
     "django_extensions",
+    "django_quill",
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,4 @@ USE_L10N = True
 USE_TZ = True
 
 ROOT_URLCONF = "config.urls"
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

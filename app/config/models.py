@@ -2,28 +2,22 @@ from django.db import models
 from django.utils import timezone
 
 __all__ = [
-    'models',
-    'BaseModel',
+    "models",
+    "BaseModel",
 ]
 
 
 class BaseManager(models.Manager):
-    def _get_compare_queryset(self, instance, compare_field='pk', sort='ascending'):
-        order_query = '{sort}{field}'.format(
-            sort='' if sort == 'ascending' else '-',
-            field=compare_field
-        )
+    def _get_compare_queryset(self, instance, compare_field="pk", sort="ascending"):
+        order_query = "{sort}{field}".format(sort="" if sort == "ascending" else "-", field=compare_field)
         compare_value = getattr(instance, compare_field)
-        sort_query = 'lt' if sort == 'ascending' else 'gt'
+        sort_query = "lt" if sort == "ascending" else "gt"
         filter_query = {
-            '{compare_field}__{sort_query}'.format(
-                compare_field=compare_field,
-                sort_query=sort_query
-            ): compare_value,
+            "{compare_field}__{sort_query}".format(compare_field=compare_field, sort_query=sort_query): compare_value,
         }
         return self.get_queryset().order_by(order_query).filter(**filter_query)
 
-    def get_index(self, instance, compare_field='pk', sort='ascending'):
+    def get_index(self, instance, compare_field="pk", sort="ascending"):
         """
         ModelClass의 objects를 compare_field를 기준으로 정렬하여,
         인자로 주어진 instance가 정렬기준 몇 번째에 해당하는지 리턴
@@ -35,9 +29,9 @@ class BaseManager(models.Manager):
         """
         return self._get_compare_queryset(instance, compare_field, sort).count()
 
-    def get_range_queryset(self, instance, compare_field='pk', sort='ascending', range=3):
+    def get_range_queryset(self, instance, compare_field="pk", sort="ascending", range=3):
         index = self.get_index(instance, compare_field, sort)
-        return self._get_compare_queryset(instance, compare_field, sort)[index-range:index+range+1]
+        return self._get_compare_queryset(instance, compare_field, sort)[index - range : index + range + 1]
 
 
 class BaseModel(models.Model):

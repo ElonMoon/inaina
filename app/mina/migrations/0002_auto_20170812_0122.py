@@ -9,17 +9,17 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mina', '0001_initial'),
+        ("mina", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='minapost',
-            options={'ordering': ('-created_date',)},
+            name="minapost",
+            options={"ordering": ("-created_date",)},
         ),
         migrations.AlterField(
-            model_name='minapost',
-            name='created_date',
+            model_name="minapost",
+            name="created_date",
             field=models.DateTimeField(blank=True, default=django.utils.timezone.now, null=True),
         ),
     ]

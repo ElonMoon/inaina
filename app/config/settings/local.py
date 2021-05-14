@@ -3,24 +3,24 @@ from .base import *
 DEBUG = True
 
 # django-dbbackup
-DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE = "django.core.files.storage.FileSystemStorage"
 DBBACKUP_STORAGE_OPTIONS = {
-    'location': DB_ROOT,
+    "location": DB_ROOT,
 }
 
 ALLOWED_HOSTS += [
-    'localhost',
-    'inaina.localhost',
+    "localhost",
+    "inaina.localhost",
 ]
 DATABASES = {
     "default": {
-      "ENGINE": "django.db.backends.postgresql",
-      "NAME": "inaina",
-      "USER": "inaina",
-      "PASSWORD": "inaina",
-      "HOST": "host.docker.internal" if IS_DOCKER else "localhost",
-      "PORT": 5432
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "inaina",
+        "USER": "inaina",
+        "PASSWORD": "inaina",
+        "HOST": "host.docker.internal" if IS_DOCKER else "localhost",
+        "PORT": 5432,
     }
 }
 
-WSGI_APPLICATION = 'config.wsgi.local.application'
+WSGI_APPLICATION = "config.wsgi.local.application"

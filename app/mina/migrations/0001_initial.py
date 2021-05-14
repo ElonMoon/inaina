@@ -17,19 +17,24 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='MinaPost',
+            name="MinaPost",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_date', models.DateTimeField(auto_now_add=True, null=True)),
-                ('modified_date', models.DateTimeField(auto_now=True, null=True)),
-                ('title', models.CharField(max_length=60)),
-                ('image', models.ImageField(blank=True, upload_to='mina')),
-                ('content', models.TextField(blank=True)),
-                ('description', models.TextField(blank=True)),
-                ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("created_date", models.DateTimeField(auto_now_add=True, null=True)),
+                ("modified_date", models.DateTimeField(auto_now=True, null=True)),
+                ("title", models.CharField(max_length=60)),
+                ("image", models.ImageField(blank=True, upload_to="mina")),
+                ("content", models.TextField(blank=True)),
+                ("description", models.TextField(blank=True)),
+                (
+                    "user",
+                    models.ForeignKey(
+                        blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

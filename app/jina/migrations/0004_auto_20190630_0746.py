@@ -8,17 +8,19 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('jina', '0003_auto_20170812_0122'),
+        ("jina", "0003_auto_20170812_0122"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='jinapost',
-            options={'ordering': ('-created_date',), 'verbose_name': '지나 포스트', 'verbose_name_plural': '지나 포스트 목록'},
+            name="jinapost",
+            options={"ordering": ("-created_date",), "verbose_name": "지나 포스트", "verbose_name_plural": "지나 포스트 목록"},
         ),
         migrations.AlterField(
-            model_name='jinapost',
-            name='user',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='유저'),
+            model_name="jinapost",
+            name="user",
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name="유저"
+            ),
         ),
     ]

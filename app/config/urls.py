@@ -22,10 +22,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
-    path('mina/', include('mina.urls')),
-    path('jina/', include('jina.urls')),
+    path("admin/", admin.site.urls),
+    path("", views.index, name="index"),
+    path("about/", views.about, name="about"),
+    path("mina/", include("mina.urls")),
+    path("jina/", include("jina.urls")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

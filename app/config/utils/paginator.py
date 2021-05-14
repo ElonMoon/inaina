@@ -36,18 +36,20 @@ class FlynsarmyPage(Page):
             return self.paginator.page_range
 
         startPage = max(1, self.number - self.adjacent_pages)
-        #Be a bit smarter about start page
-        if startPage <= 3: startPage = 1
+        # Be a bit smarter about start page
+        if startPage <= 3:
+            startPage = 1
         endPage = self.number + self.adjacent_pages + 1
-        #Be a bit smarter about end page
-        if endPage >= self.paginator.num_pages - 1: endPage = self.paginator.num_pages + 1
+        # Be a bit smarter about end page
+        if endPage >= self.paginator.num_pages - 1:
+            endPage = self.paginator.num_pages + 1
 
-        page_range = [n for n in range(startPage, endPage) \
-                if n > 0 and n <= self.paginator.count]
+        page_range = [n for n in range(startPage, endPage) if n > 0 and n <= self.paginator.count]
 
         return {
-            'page_range': page_range,
-            'show_first': 1 not in page_range,
-            'show_last': self.paginator.num_pages not in page_range,
+            "page_range": page_range,
+            "show_first": 1 not in page_range,
+            "show_last": self.paginator.num_pages not in page_range,
         }
+
     page_range_data = property(_get_page_range_data)

@@ -10,22 +10,21 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Notice',
+            name="Notice",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_date', models.DateTimeField(blank=True, default=django.utils.timezone.now, null=True)),
-                ('modified_date', models.DateTimeField(auto_now=True, null=True)),
-                ('title', models.CharField(max_length=200)),
+                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("created_date", models.DateTimeField(blank=True, default=django.utils.timezone.now, null=True)),
+                ("modified_date", models.DateTimeField(auto_now=True, null=True)),
+                ("title", models.CharField(max_length=200)),
             ],
             options={
-                'verbose_name': '공지사항',
-                'verbose_name_plural': '공지사항 목록',
-                'ordering': ('-created_date',),
+                "verbose_name": "공지사항",
+                "verbose_name_plural": "공지사항 목록",
+                "ordering": ("-created_date",),
             },
         ),
     ]
