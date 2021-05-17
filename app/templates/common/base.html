@@ -11,6 +11,8 @@
   <link type="text/css" rel="stylesheet" href="{% static 'css/header.css' %}">
   <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
   <link type="text/css" rel="stylesheet" href="{% static 'css/post.css' %}">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/photo_posts.css' %}">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/photo_thumbnails.css' %}">
 
   <meta property="og:url" content="{% block meta_url %}{{ path_url }}{% endblock %}"/>
   <meta property="og:type" content="website"/>
@@ -53,7 +55,7 @@
                                                                        alt=""></a>
         <a href="{% url 'mina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_03.gif' %}"
                                                                        alt=""></a>
-        <a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_04.gif' %}" alt=""></a>
+        <a href="{% url 'photos:thumbnails' %}" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_04.gif' %}" alt=""></a>
         <a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_05.gif' %}" alt=""></a>
       </div>
     </header>

@@ -1,0 +1,22 @@
+.photo-thumbnails-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.photo-thumbnails-container .photo-post {
+  width: 119.125px;
+  height: 119.125px;
+  margin-bottom: 1px;
+  background-color: black;
+}
+@media screen and (max-width: 1000px) {
+  .photo-thumbnails-container .photo-post {
+    width: calc((100% - 2px) / 3);
+    height: calc((100% - 2px) / 3);
+  }
+}
+.photo-thumbnails-container .photo-post:not(:nth-child(9n)) {
+  margin-right: 1px;
+}
+
+/*# sourceMappingURL=photo_thumbnails.css.map */

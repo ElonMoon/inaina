@@ -27,5 +27,6 @@ urlpatterns = [
     path("about/", views.about, name="about"),
     path("mina/", include("mina.urls")),
     path("jina/", include("jina.urls")),
+    path("photos/", include("photos.urls")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,6 +1,14 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 html, body {
+<<<<<<< Updated upstream
   font-size: 13px;
   color: #666;
+=======
+  font-family: serif;
+  font-size: 12px;
+  color: #666;
+  font-weight: 300;
+>>>>>>> Stashed changes
 }
 
 img {

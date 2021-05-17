@@ -8,6 +8,8 @@ __all__ = ("PhotoPost",)
 
 class PhotoPost(TimeStampedModel):
     title = models.CharField(max_length=60)
+    image_title = models.ImageField("대표이미지", blank=True)
+    image_thumbnail = models.ImageField("썸네일이미지", blank=True, help_text="없을경우 대표이미지 사용")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = QuillField()
 

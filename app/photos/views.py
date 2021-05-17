@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+from photos.models import PhotoPost
+
+
+def thumbnails(request):
+    posts = PhotoPost.objects.all()
+    context = {
+        "posts": posts,
+    }
+    return render(request, "photo/thumbnails.html", context)

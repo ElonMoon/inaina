@@ -1,0 +1,9 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div class="photo-thumbnails-container">
+        {% for post in posts %}
+            <div class="photo-post"></div>
+        {% endfor %}
+    </div>
+{% endblock %}

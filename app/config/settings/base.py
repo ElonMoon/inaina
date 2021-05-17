@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     "jina",
     "member",
     "notice",
+    "photos",
     "utils",
     "django.contrib.admin",
     "django.contrib.auth",

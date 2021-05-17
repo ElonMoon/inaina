@@ -11,6 +11,7 @@ DBBACKUP_STORAGE_OPTIONS = {
 ALLOWED_HOSTS += [
     "localhost",
     "inaina.localhost",
+    "*",
 ]
 DATABASES = {
     "default": {
