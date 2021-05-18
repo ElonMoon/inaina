@@ -10,7 +10,7 @@
           {% endif %}
           <p class="cover-date" style="color: {{ post.date_color }}"><i>by</i> {{ post.user }} • {{ post.created|date:"Y.m.d" }}</p>
         </div>
-        <div class="cover-image" style="background-image: url('{{ post.image_title.url }}');"></div>
+        <div class="cover-image" style="{% if post.image_title %}background-image: url('{{ post.image_title.url }}');"{% endif %}></div>
       </div>
       <div class="content ql-editor">
         {{ post.content.html|safe }}
