@@ -3,7 +3,12 @@
 #index {
   display: flex;
   flex-direction: row;
+
+  #img-index-intro {
+    object-fit: contain;
+  }
 }
+
 .notice-container {
   display: flex;
   flex-direction: column;
@@ -17,9 +22,6 @@
       font-weight: 500;
     }
   }
-}
-.img-index-intro {
-  object-fit: contain;
 }
 
 @media screen and (max-width: $width-mobile) {

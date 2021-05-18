@@ -11,6 +11,9 @@ p {
   display: flex;
   flex-direction: row;
 }
+#index #img-index-intro {
+  object-fit: contain;
+}
 
 .notice-container {
   display: flex;
@@ -23,10 +26,6 @@ p {
 }
 .notice-container .notice-table .notice-date {
   font-weight: 500;
-}
-
-.img-index-intro {
-  object-fit: contain;
 }
 
 @media screen and (max-width: 1000px) {
