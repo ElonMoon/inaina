@@ -1,9 +1,16 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <div class="photo-thumbnails-container">
-        {% for post in posts %}
-            <div class="photo-post"></div>
-        {% endfor %}
-    </div>
+  <div class="photo-thumbnails-container">
+    {% for post in posts %}
+      <div class="photo-post">
+        <a href="{% url 'photos:posts' post.pk %}">
+          <img src="{% if post.image_thumbnail %}{{ post.image_thumbnail.url }}
+                    {% elif post.image_title %}{{ post.image_title.url }}
+                    {% else %}
+                    {% endif %}">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

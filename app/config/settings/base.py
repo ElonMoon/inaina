@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "colorfield",
     "dbbackup",
     "django_extensions",
     "django_quill",

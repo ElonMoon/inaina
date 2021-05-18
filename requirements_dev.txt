@@ -15,6 +15,7 @@ click==8.0.0; python_version >= "3.6" and python_full_version >= "3.6.2"
 colorama==0.4.4; python_version >= "3.6" and python_full_version >= "3.6.2" and platform_system == "Windows" and (python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0")
 decorator==5.0.9; python_version >= "3.7"
 defusedxml==0.7.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+django-colorfield==0.4.1
 django-dbbackup==3.3.0
 django-debug-toolbar==3.2.1; python_version >= "3.6"
 django-extensions==2.2.9

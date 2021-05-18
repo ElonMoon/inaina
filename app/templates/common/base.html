@@ -11,8 +11,9 @@
   <link type="text/css" rel="stylesheet" href="{% static 'css/header.css' %}">
   <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
   <link type="text/css" rel="stylesheet" href="{% static 'css/post.css' %}">
-  <link type="text/css" rel="stylesheet" href="{% static 'css/photo_posts.css' %}">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/photo_post.css' %}">
   <link type="text/css" rel="stylesheet" href="{% static 'css/photo_thumbnails.css' %}">
+  {% include 'django_quill/media.html' %}
 
   <meta property="og:url" content="{% block meta_url %}{{ path_url }}{% endblock %}"/>
   <meta property="og:type" content="website"/>
@@ -47,16 +48,22 @@
     <header>
       <div id="header-title">
         <a href="{% url 'index' %}">
-          <img src="{% static 'images/inainanet_title.gif' %}" alt="" usemap="#title-map"> </a>
+          <img src="{% static 'images/inaina_title.png' %}">
+        </a>
       </div>
       <div id="header-menu">
-        <a href="{% url 'about' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_01.gif' %}" alt=""></a>
-        <a href="{% url 'jina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_02.gif' %}"
-                                                                       alt=""></a>
-        <a href="{% url 'mina:post_default' %}" class="menu-item"><img src="{% static 'images/inainanet_menu_03.gif' %}"
-                                                                       alt=""></a>
-        <a href="{% url 'photos:thumbnails' %}" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_04.gif' %}" alt=""></a>
-        <a href="#" class="menu-item menu-hidden"><img src="{% static 'images/inainanet_menu_05.gif' %}" alt=""></a>
+        <a href="{% url 'about' %}" class="menu-item">
+          <img src="{% static 'images/inainanet_menu_01.gif' %}">
+        </a>
+        <a href="{% url 'jina:post_default' %}" class="menu-item">
+          <img src="{% static 'images/inainanet_menu_02.gif' %}">
+        </a>
+        <a href="{% url 'mina:post_default' %}" class="menu-item">
+          <img src="{% static 'images/inainanet_menu_03.gif' %}">
+        </a>
+        <a href="{% url 'photos:thumbnails' %}" class="menu-item">
+          <img src="{% static 'images/inainanet_menu_04.gif' %}">
+        </a>
       </div>
     </header>
     <div id="content">

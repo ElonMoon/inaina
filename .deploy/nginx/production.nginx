@@ -1,4 +1,14 @@
 server {
+  listen 80;
+  listen 443;
+  charset utf-8;
+
+  location / {
+    return 404;
+  }
+}
+
+server {
   listen        80;
   server_name   www.inaina.net inaina.net;
   server_tokens off;

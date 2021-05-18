@@ -1,3 +1,12 @@
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.3em 0;
+}
+
+p {
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+}
+
 header {
   font-size: 0;
   border: 1px solid black;
@@ -10,13 +19,13 @@ header {
 }
 @media screen and (max-width: 1000px) {
   header #header-menu a.menu-item {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
   }
   header #header-menu a.menu-item.menu-hidden {
     display: none;
   }
   header #header-menu a.menu-item img {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
   }
 }
 

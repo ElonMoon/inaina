@@ -9,7 +9,7 @@ $COLOR_FONT_GRAY: #666;
 $HEIGHT_HEADER: 59px;
 
 html, body {
-  font-family: serif;
+  font-family: "Noto Sans KR", serif;
   font-size: 12px;
   color: #666;
   font-weight: 300;
@@ -20,7 +20,7 @@ img {
 }
 
 #wrap {
-  width: 962px;
+  width: 770px;
   margin: 0 auto;
   @media screen and (max-width: $width-mobile) {
     width: 100%;

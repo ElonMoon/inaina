@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-{"version":3,"sourceRoot":"","sources":["base.sass"],"names":[],"mappings":"AAEA;EACE;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;;AACA;EAHF;IAII;;;AAEF;EACE;;AACA;EAFF;IAGI","file":"base.css"}
-=======
-{"version":3,"sourceRoot":"","sources":["base.scss"],"names":[],"mappings":"AACQ;AASR;EACE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;AACA;EAHF;IAII;;;AAGF;EACE;;AACA;EAFF;IAGI","file":"base.css"}
->>>>>>> Stashed changes
+{"version":3,"sourceRoot":"","sources":["base.scss","_var.sass"],"names":[],"mappings":"AACQ;ACOR;EACE;;;AAEF;EACE;EACA;;;ADHF;EACE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;AACA;EAHF;IAII;;;AAGF;EACE;;AACA;EAFF;IAGI","file":"base.css"}

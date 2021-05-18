@@ -1,7 +1,19 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <div class="photo-posts-container">
-
+    <div class="photo-post">
+      <div class="wrap-cover">
+        <div class="cover-content">
+          <h1 class="cover-title" style="color: {{ post.title_color }}">{{ post.title }}</h1>
+          {% if post.subtitle %}
+            <p class="cover-subtitle" style="color: {{ post.subtitle_color }}">{{ post.subtitle }}</p>
+          {% endif %}
+          <p class="cover-date" style="color: {{ post.date_color }}"><i>by</i> {{ post.user }} • {{ post.created|date:"Y.m.d" }}</p>
+        </div>
+        <div class="cover-image" style="background-image: url('{{ post.image_title.url }}');"></div>
+      </div>
+      <div class="content ql-editor">
+        {{ post.content.html|safe }}
+      </div>
     </div>
 {% endblock %}

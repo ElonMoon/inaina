@@ -17,6 +17,7 @@ gunicorn = "<21"
 pillow = "^8"
 psycopg2-binary = "<3"
 sentry-sdk = "<2"
+django-colorfield = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 django-debug-toolbar = "<4"

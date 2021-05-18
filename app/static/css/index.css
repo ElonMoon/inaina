@@ -1,45 +1,40 @@
-#index {
-  font-size: 0;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.3em 0;
 }
+
+p {
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+}
+
+#index {
+  display: flex;
+  flex-direction: row;
+}
+
+.notice-container {
+  display: flex;
+  flex-direction: column;
+  width: 289px;
+}
+.notice-container .notice-table {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.notice-container .notice-table .notice-date {
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1000px) {
   #index {
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
   }
-}
-#index #img-index-left {
-  width: 576px;
-}
-#index #index-right {
-  width: 386px;
-  display: inline-block;
-  vertical-align: top;
-}
-@media screen and (max-width: 1000px) {
-  #index #index-right {
-    width: 100%;
+
+  .notice-container {
+    margin-bottom: 20px;
   }
-}
-#index #index-right #img-index-open {
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 1000px) {
-  #index #index-right #img-index-open {
-    display: none;
-  }
-}
-#index #index-right #notice-list {
-  width: 386px;
-  font-size: 13px;
-  line-height: 1.7;
-}
-@media screen and (max-width: 1000px) {
-  #index #index-right #notice-list {
-    width: 100%;
-    font-size: 10px;
-  }
-}
-#index #index-right #notice-list .notice-date {
-  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.css.map */
