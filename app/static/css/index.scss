@@ -18,6 +18,9 @@
     }
   }
 }
+.img-index-intro {
+  object-fit: contain;
+}
 
 @media screen and (max-width: $width-mobile) {
   #index {

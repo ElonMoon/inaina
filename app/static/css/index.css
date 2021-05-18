@@ -25,6 +25,10 @@ p {
   font-weight: 500;
 }
 
+.img-index-intro {
+  object-fit: contain;
+}
+
 @media screen and (max-width: 1000px) {
   #index {
     flex-direction: column;
