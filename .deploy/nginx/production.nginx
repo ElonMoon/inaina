@@ -3,6 +3,9 @@ server {
   listen 443 ssl;
   charset utf-8;
 
+  ssl_certificate       /etc/letsencrypt/live/inaina.net/fullchain.pem;
+  ssl_certificate_key   /etc/letsencrypt/live/inaina.net/privkey.pem;
+
   location / {
     return 404;
   }
