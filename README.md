@@ -26,6 +26,31 @@ pre-commit install
 
 
 
+## 배포
+
+nginx repo가 서버 전체의 Nginx역할을 하며, 이 프로젝트는 docker-compose Network를 통해 실행
+
+### 인증서 (재)발급
+
+```
+./.deploy/init.sh
+```
+
+위 스크립트는 인증서가 없거나 만료된 경우 한 번만 실행  
+외부의 80, 443과 연결되어있으면 cerbot컨테이너가 12시간마다 자동으로 renew요청
+
+### 실행
+
+S3 비밀값을 환경변수로 할당 후, **docker-compose up** 명령어 실행
+
+```shell
+AWS_S3_ACCESS_KEY_ID=**** AWS_S3_SECRET_ACCESS_KEY=**** --env-file .deploy/envs/production.env up --build --force-recreate -d
+```
+
+
+
+
+
 ## Server Settings (Oracle Cloud)
 
 ### DB
