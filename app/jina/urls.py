@@ -1,9 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
+
 from . import views
 
 app_name = "jina"
 urlpatterns = [
-    url(r"^post/$", views.post, name="post_default"),
-    url(r"^post/(?P<pk>[0-9]+)/$", views.post, name="post"),
-    url(r"^post/page/(?P<page_number>[0-9]+)/$", views.post, name="post_page_number"),
+    path("post/", views.post, name="post_default"),
+    path("post/<int:pk>/", views.post, name="post"),
+    path("post/page/<int:page_number>/", views.post, name="post_page_number"),
 ]

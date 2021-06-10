@@ -18,8 +18,16 @@ from django.conf.urls import include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 
+from mina.apis import MinaPostViewSet
 from . import views
+
+router = SimpleRouter()
+router.register(r"mina", MinaPostViewSet)
+urlpatterns_apis = [
+    path("", include(router.urls)),
+]
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,5 +36,6 @@ urlpatterns = [
     path("mina/", include("mina.urls")),
     path("jina/", include("jina.urls")),
     path("photos/", include("photos.urls")),
+    path("api/", include(urlpatterns_apis)),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
