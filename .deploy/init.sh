@@ -78,5 +78,5 @@ echo
 
 sudo chown -R $USER:$USER $data_path
 
-echo "### Stop nginx ..."
-docker-compose stop
+echo "### Reloading nginx ..."
+docker-compose exec nginx nginx -s reload
