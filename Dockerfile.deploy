@@ -1,11 +1,10 @@
 # syntax = docker/dockerfile:experimental
-FROM        python:3.8-slim
+FROM        python:3.9-slim
 
 # Language, Timezone
 ENV         LANG C.UTF-8
 ENV         TZ Asia/Seoul
 RUN         ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 COPY        .deploy/pgdg.list /tmp/
 ADD         https://www.postgresql.org/media/keys/ACCC4CF8.asc /tmp/
 
@@ -19,7 +18,7 @@ RUN         \
 RUN         cp /tmp/pgdg.list /etc/apt/sources.list.d/ &&\
             apt -y update &&\
             apt -y dist-upgrade &&\
-            apt -y install postgresql-client-13 &&\
+            apt -y install postgresql-client-14 &&\
             apt -y autoremove
 
 # requirements
