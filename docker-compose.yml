@@ -11,7 +11,7 @@ services:
       - static:/srv/.static
     depends_on:
       - django
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off; worker_processes 1;\"'"
     networks:
       - default
       - proxy
